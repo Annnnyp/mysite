@@ -3,3 +3,4 @@ db.sqlite3
 setting.py
 venv/
 media/
+static_collected/
