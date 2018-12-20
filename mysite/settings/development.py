@@ -11,10 +11,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -32,7 +31,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
+'''
 
 #发送邮件设置
 # https://docs.djangoproject.com/en/2.0/ref/settings/#email
