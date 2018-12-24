@@ -13,9 +13,13 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SECRET_KEY = 'gjr+ijmr(8i&vf=u=r*e+od6h1!iudymhg--+qp_s=vh%)xaq$'
 
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
@@ -84,6 +88,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'myblog_db',
+        'USER': 'ayp',
+        'PASSWORD': 'a18803100108',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -145,3 +159,15 @@ CACHES = {
         'LOCATION': 'my_cache_table',
     }
 }
+
+#发送邮件设置
+# https://docs.djangoproject.com/en/2.0/ref/settings/#email
+# https://docs.djangoproject.com/en/2.0/topics/email/
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = '850016457@qq.com'
+EMAIL_HOST_PASSWORD =  os.environ['EMAIL_HOST_PASSWORD']  # 授权码
+EMAIL_SUBJECT_PREFIX = '[安亚鹏的博客]'
+EMAIL_USE_SSL = True  # 与SMTP服务器通信时，是否启动SSL链接(安全链接)
+
